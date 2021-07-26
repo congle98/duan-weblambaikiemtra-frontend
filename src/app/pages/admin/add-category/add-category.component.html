@@ -1,0 +1,38 @@
+<mat-card class="my-card mt-20">
+  <h1>Add new category</h1>
+  <mat-card-content>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form (ngSubmit)="addCategory()" #myForm="ngForm">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input
+              name="title"
+              [(ngModel)]="category.title"
+              matInput
+              placeholder="nhập title"
+              type="text"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Description</mat-label>
+            <input
+              name="description"
+              [(ngModel)]="category.description"
+              type="text"
+              matInput
+              placeholder="nhập miêu tả"
+              type="text"
+              required
+            />
+          </mat-form-field>
+          <div class="container text-center mt-20">
+            <p *ngIf="myForm.invalid" class="my-validator">Yêu cầu nhập đầy đủ các trường bắt buộc!!</p>
+            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

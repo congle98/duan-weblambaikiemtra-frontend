@@ -1,0 +1,42 @@
+cài material
+bootstrap
+
+sweetalert2 để hiển thị modal thông báo
+npm install --save sweetalert2
+
+dùng behaviorsubject trong server chung để các component khác lắng nghe các thay đổi nếu 
+quá trình bidding bị không đồng bộ dữ liệu
+
+Observable là phát ra sự kiện
+Observer là lắng nghe sự kiện
+
+dùng guard để chặn truy cập phân quyền
+
+dùng  authInterceptor impl từ HttpInterceptor để gửi token đính kèm theo mỗi request lên serve 
+
+font google icon để lấy icon
+
+flaticon.com lấy icon dạng img cũng ngon nha
+
+ng build --prod để build fontend
+sau khi thêm sửa xoá hạn chế cập nhật lại dữ liệu bằng cách gửi query lại cho backend
+
+https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/frameworks/angular.html
+để thêm trình soạn thảo text vào trong project 
+ và phải tạo thêm 1 file typings.d.ts
+ghi cái này vào để nó nhận đối tượng,, nói chung xem lại project này để tìm hiểu
+declare module '@ckeditor/ckeditor5-build-classic' {
+    const ClassicEditorBuild: any;
+
+    export = ClassicEditorBuild;
+}
+
+    <!-- vì cái ckeditor sẽ prifnt ra 1 đoạn html để cấu hình các kiểu chữ chứ ko phải text thường
+ lên chỗ nào render ra dữ liệu thì phải dùng innerHTML
+
+
+setTimeOut thì sau 1 khoảng tg nó sẽ thực hiện hàm bên trong và chỉ chạy 1 lần
+còn setInterval thì cứ sau 1 khoảng tg thì nó  sẽ gọi hàm bên trong, chạy vĩnh viễn chỉ kết thúc khi được clear
+
+có thể nói setInterval là  setTimeout + vòng lặp
+

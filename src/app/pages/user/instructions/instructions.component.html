@@ -1,0 +1,38 @@
+<div class="container mt-20">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card class="my-card">
+                <mat-card-header>
+                    <mat-card-title>Hướng dẫn trước khi làm bài</mat-card-title>
+                    <!-- <p>Đọc kỹ và làm theo hướng dẫn</p> -->
+                </mat-card-header>
+                <mat-card-content class="ml-20">
+                    <h1>{{quiz.title}}</h1>
+                    <p>{{quiz.description}}</p>
+                    <mat-divider></mat-divider>
+                    <h1>Những lưu ý quan trọng trong quá trình làm bài kiểm tra</h1>
+                 
+                    <ul>
+                        <li>Bài kiểm tra giúp ôn tập lại những kiến thức cơ bản</li>
+                        <li>Bài kiểm tra sẽ phải được hoàn thành trong thời gian đúng quy định: <strong>{{quiz.numberOfQuestion}} phút</strong></li>
+                        <li>Bài kiểm tra {{quiz.title}} sẽ có tổng cộng: <strong>{{quiz.numberOfQuestion}}</strong> câu hỏi</li>
+                        <li>Cân nhắc trả lời những câu từ dễ đến khó</li>
+                        <li>Tổng số điểm tối đa đạt được sẽ là: <strong>{{quiz.maxMarks}} điểm, tương ứng {{quiz.maxMarks/quiz.numberOfQuestion}} điểm với mỗi câu hỏi</strong></li>
+                    </ul>
+                    <mat-divider></mat-divider>
+                    <ul>
+                        <li>Nhấn <strong>Start Quiz</strong> để bắt đầu làm bài kiểm tra</li>
+                        <li>Thời gian sẽ rút ngắn dần khi bạn nhấp vào nút bắt đầu kiểm tra</li>
+                        <li>Bạn sẽ không thể tiếp tục bài thi nếu trong quá trình thi sảy ra lỗi </li>
+                        <li>Nhấn <strong>Next Quiz</strong> để chuyển sang câu hỏi tiếp theo </li>
+                        <li>Nhấn <strong>Submit Test</strong> để hoàn thành bài kiểm tra</li>
+                        <li>Báo cáo của bài kiểm tra được tạo tự động dưới dạng file PDF</li>
+                    </ul>
+                </mat-card-content>
+                    <mat-card-actions class=text-center>
+                        <button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+                    </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

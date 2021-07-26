@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'duan-demo-frontend';
+  blur=10;
 }

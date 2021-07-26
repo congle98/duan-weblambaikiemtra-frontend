@@ -1,0 +1,17 @@
+.profile-image{
+    width: 150px;
+    height: 150px;
+    border: 2px solid #ff4081;
+    border-radius:50%;
+}
+
+
+.table td{
+    
+    border: 1px solid black;
+    width: 50%;
+    
+}
+.table{
+    border-collapse: separate;
+}

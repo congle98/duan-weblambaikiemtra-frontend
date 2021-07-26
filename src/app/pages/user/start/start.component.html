@@ -1,0 +1,170 @@
+<div class="container-fluid" style="padding-top:50px" *ngIf="!isSubmit">
+    <div class="row">
+      <div class="col-md-3">
+        <mat-card class="my-card">
+          <h3>Lưu ý</h3>
+          <ul>
+            <li>Không tải lại trang web</li>
+            <li>Tâm chung làm bài và để ý thời gian</li>
+            <li>Chúc may mắn!!</li>
+          </ul>
+        </mat-card>
+        <mat-card class="my-card mt-20 mb-20">
+          <mat-card-header>
+            <mat-card-title> Thời gian còn lai: </mat-card-title>
+            <mat-card-subtitle
+              >Bài thi sẽ tự động kết thúc sau:
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="text-center">
+            <h1>{{ getFormattedTime() }}</h1>
+            <mat-spinner
+              *ngIf="questions"
+              style="margin: auto"
+              color="accent"
+              mode="determinate"
+              [value]="(this.timer / (this.questions.length * 60)) * 100"
+            ></mat-spinner>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <mat-card class="col-md-9  my-card" style="background-color: #e0835e">
+        <h1 *ngIf="questions">Bài kiểm tra {{ questions[0].quiz.title }}</h1>
+        <mat-card
+          class="mb-20 my-card"
+          *ngFor="let question of questions; let i = index"
+        >
+          <mat-card-content>
+            <p>
+              Câu {{ i + 1 }} : <span [innerHTML]="question.content"></span>
+            </p>
+            <mat-divider></mat-divider>
+          </mat-card-content>
+
+          <div class="row mt-20">
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [(ngModel)]="question.givenAnswer"
+                [value]="question.option1"
+                [name]="i + ''"
+              />
+             A: {{ question.option1 }}
+            </div>
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [(ngModel)]="question.givenAnswer"
+                [value]="question.option2"
+                [name]="i + ''"
+              />
+             B: {{ question.option2 }}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [(ngModel)]="question.givenAnswer"
+                [value]="question.option3"
+                [name]="i + ''"
+              />
+             C: {{ question.option3 }}
+            </div>
+            <div class="col-md-6">
+              <input
+                type="radio"
+                [(ngModel)]="question.givenAnswer"
+                [value]="question.option4"
+                [name]="i + ''"
+              />
+             D: {{ question.option4 }}
+            </div>
+          </div>
+        </mat-card>
+        <div class="container text-center mt-20">
+          <button mat-raised-button color="primary" (click)="completeQuiz()">
+            Submit Quiz
+          </button>
+        </div>
+      </mat-card>
+      
+    </div>
+</div>
+
+<!-- show đáp án -->
+<div class="container-fluid" *ngIf="isSubmit">
+  <div class="row">
+    <div class="col-md-6 mt-20 offset-md-3 text-center">
+      <mat-card class="my-card">
+        <mat-card-header class="text-center">
+          <h1 style="font-weight: bold;">Chúc mừng {{testInfo.user.username}} đã hoàn thành bài thi {{testInfo.quiz.title}} </h1>
+        </mat-card-header>
+        <mat-card-content>
+          
+          <h1>Tổng điểm : {{ testInfo.marksGot }}</h1>
+          <h1>Số câu khoanh : {{ testInfo.attempted }}</h1>
+          <h1>Số câu đúng : {{ testInfo.correctAnswers }}</h1>
+          <!-- <h1>Tỷ lệ đúng : {{ (correctAnswers * 100) / attempted }} %</h1> -->
+        </mat-card-content>
+        <mat-action-list>
+          <button
+            class="mr-20"
+            mat-raised-button
+            color="accent"
+            (click)="printPage()"
+          >
+            In kết quả
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            routerLink="/user-dashboard/0"
+          >
+            Quay lại trang chủ
+          </button>
+        </mat-action-list>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-20 text-center">
+      <mat-card
+      class="mb-20"
+      *ngFor="let question of questions; let i = index"
+    >
+      <mat-card-content>
+        <p>
+          Câu {{ i + 1 }} : <span [innerHTML]="question.content"></span>
+        </p>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+
+      <div class="row mt-20">
+        <div class="col-md-6">
+        
+         A: {{ question.option1 }}
+        </div>
+        <div class="col-md-6">
+          
+          B: {{ question.option2 }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+         
+          C: {{ question.option3 }}
+        </div>
+        <div class="col-md-6">
+          
+         D: {{ question.option4 }}
+        </div>
+      </div>
+      <div class="row">
+        <p><strong>Đáp án đúng là là : </strong>{{question.answer}}</p>
+      </div>
+    </mat-card>
+    </div>
+  </div>
+</div>
+

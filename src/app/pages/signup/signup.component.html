@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mt-20 offset-md-3">
+      <mat-card class="example-card my-card">
+        <mat-card-title>
+          <h1 class="text-center">Register here!</h1></mat-card-title
+        >
+        <form (ngSubmit)="formSubmit()" #myForm="ngForm">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>UserName</mat-label>
+            <input
+              required
+              [(ngModel)]="user.username"
+              name="username"
+              matInput
+              placeholder="Placeholder"
+            />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Vui lòng nhập đầy đủ thông tin</mat-hint>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              required
+              [(ngModel)]="user.email"
+              name="email"
+              matInput
+              placeholder="Placeholder"
+            />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>PassWord</mat-label>
+
+            <input
+              required
+              [(ngModel)]="user.password"
+              name="password"
+              matInput
+              placeholder="Placeholder"
+              matInput
+              [type]="hide ? 'password' : 'text'"
+            />
+            <a
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </a>
+          </mat-form-field>
+          <div class="container text-center">
+            <p *ngIf="myForm.invalid" class="my-validator">
+              Yêu cầu nhập đầy đủ các trường bắt buộc!!
+            </p>
+            <button
+              type="submit"
+              style="margin-right: 30px"
+              mat-raised-button
+              color="primary"
+              [disabled]="myForm.invalid"
+            >
+              Đăng ký
+            </button>
+
+            <!-- <button mat-raised-button [disabled]="myForm.invalid"  color="accent">Clear</button> -->
+          </div>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>

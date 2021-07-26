@@ -1,0 +1,9 @@
+.truncate{
+    display: block;
+
+    /* lên xuống dòng khi hết width tối đa */
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,20 @@
+<mat-card class="mt-20 my-card">
+  <mat-action-list>
+    <h1>Menu</h1>
+    <button mat-list-item routerLink="/user-dashboard/profile">
+        <mat-icon mat-list-icon> account_circle </mat-icon>Profile
+      </button>
+    <button mat-list-item routerLink="/user-dashboard/0">
+      <mat-icon mat-list-icon>home</mat-icon>All quizzes
+    </button>
+    <button
+      mat-list-item
+      routerLink="/user-dashboard/{{ category.id }}"
+      *ngFor="let category of categories"
+    >
+      <mat-icon mat-list-icon>quiz</mat-icon>{{ category.title }}
+    </button>
+
+   
+  </mat-action-list>
+</mat-card>

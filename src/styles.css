@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+background-color: #f1f1f1; color: #4d465a;}
+.text-center{
+    text-align:center;
+}
+.full-width{
+    width: 100%;
+}
+/* .snackBar-custom{
+  
+} */
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.ml-20{
+    margin-left: 20px !important;
+}
+.mr-20{
+    margin-right: 20px !important;
+}
+.mt-20{
+    margin-top: 20px !important;
+}
+.mb-20{
+    margin-bottom: 20px !important;
+}
+
+.example-header-image-quiz {
+    background-image: url('src/assets/choose.png');
+    background-size: cover;
+  }
+  .background-base{
+    background: url('src/assets/bgchot.png'); 
+    background-size: 100% 1615px;
+    height: 1615px;
+    background-repeat: no-repeat;
+  
+  }
+
+  .my-card {
+    box-shadow: 0 3px 10px rgb(3 207 252) !important;
+  }
+  
+
+.my-navbar{
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index:100;
+   
+}
+.my-sidebar{
+    background-color: #42b9f5;
+   
+}
+
+.my-validator{
+    color: #f03551;
+}
+.my-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #4d465a;
+}
+

@@ -1,0 +1,33 @@
+<h1>Questions of {{quizTitle}}</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="container text-center">
+                <button mat-raised-button color="accent" routerLink="/admin/add-question/{{quizId}}/{{quizTitle}}">Add question </button>
+            </div>
+            <mat-card *ngFor="let question of questions; let i = index" class="mt-20 my-card">
+                <mat-card-content>
+                    <!-- vì cái ckeditor sẽ prifnt ra 1 đoạn html để cấu hình các kiểu chữ chứ ko phải text thường lên phải dùng innerHTML -->
+                    <strong>Question {{i+1}}: </strong><span [innerHTML]="question.content"></span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6"><p>A: {{question.option1}}</p></div>
+                            <div class="col-md-6"><p>B: {{question.option2}}</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"><p>C: {{question.option3}}</p></div>
+                            <div class="col-md-6"><p>D: {{question.option4}}</p></div>
+                        </div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <strong>Đáp án: {{question.answer}} </strong>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button color="accent">Update Question</button>
+                    <button mat-button color="warn" (click)="deleteQuestion(question.id)">Delete Question</button>
+                </mat-card-actions>              
+            </mat-card>
+
+        </div>
+    </div>
+</div>
