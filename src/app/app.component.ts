@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'duan-demo-frontend';
   blur = 10;
-  loginOrHome = false;
+  // loginOrHome = false;
   constructor(private router: Router) {}
-  login() {
-    if (this.loginOrHome == false) {
-      this.router.navigate(['/login']);
-      this.loginOrHome = true;
-    } else {
-      this.loginOrHome = false;
-      this.router.navigate(['']);
-    }
-  }
+  // login() {
+  //   if (this.loginOrHome == false) {
+  //     this.router.navigate(['/login']);
+  //     // this.loginOrHome = true;
+  //   } else {
+  //     // this.loginOrHome = false;
+  //     this.router.navigate(['']);
+  //   }
+  // }
 }
