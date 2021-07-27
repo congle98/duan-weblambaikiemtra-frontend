@@ -36,11 +36,18 @@ background-color: #f1f1f1; color: #4d465a;}
     background-size: cover;
   }
   .background-base{
-    background: url('src/assets/bgchot.png'); 
+    background: url('src/assets/backrgroudbase.png'); 
     background-size: 100% 1615px;
     height: 1615px;
     background-repeat: no-repeat;
   
+  }
+  .my-form-login{
+    position: fixed;
+    top: 180px ;
+    left:25%;
+    
+    
   }
 
   .my-card {
@@ -55,6 +62,10 @@ background-color: #f1f1f1; color: #4d465a;}
     padding: 0;
     z-index:100;
    
+}
+.my-navbar-toolbar{
+    background-color: #000000 !important;
+    color: #f1f1f1 ;
 }
 .my-sidebar{
     background-color: #42b9f5;

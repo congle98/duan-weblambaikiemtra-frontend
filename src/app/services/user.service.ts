@@ -7,13 +7,13 @@ import baseUrl from './helper';
 })
 export class UserService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,) { }
 
   addUser(user: any){
     return this.http.post(`${baseUrl}/user/signup`,user)
   }
 
   updateUser(user:any){
-    return this.http.put(`${baseUrl}/user`,user)
+    return this.http.put(`${baseUrl}/user`,user);
   }
 }

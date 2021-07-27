@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2'
 
@@ -21,7 +22,7 @@ export class SignupComponent implements OnInit {
   
 
 
-  constructor(private userService: UserService, private snack: MatSnackBar) {}
+  constructor(private userService: UserService, private snack: MatSnackBar, private router:Router) {}
 
   ngOnInit(): void {}
   formSubmit() {
@@ -38,7 +39,8 @@ export class SignupComponent implements OnInit {
     }
     this.userService.addUser(this.user).subscribe(
       (data) => {
-        Swal.fire('Thành công', 'Đăng ký tài khoản thành công!', 'success');
+        Swal.fire('Thành công', 'Đăng ký tài khoản thành công, bắt đầu ngay thôi nào!', 'success');
+        this.router.navigate(['/login']);
       },
       (err) => {
         
