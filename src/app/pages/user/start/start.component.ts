@@ -13,6 +13,8 @@ import Swal from 'sweetalert2';
 export class StartComponent implements OnInit {
   quizId: any;
   questions:any;
+  question:any;
+  qindex=0;
   isSubmit= false;
   // //tổng điểm
   // marksGot = 0;
@@ -45,7 +47,7 @@ export class StartComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.preventBackButton();
+    // this.preventBackButton();
     this.quizId = this.activeRouter.snapshot.params.quizId;
     this.getQuestions();
   }
@@ -62,6 +64,7 @@ export class StartComponent implements OnInit {
     this.questionService.getQuestionsOfQuizForTest(this.quizId).subscribe(
       (questions) => {
         this.questions = questions;
+        this.question = this.questions[0];
 
         this.timer = this.questions.length*60;
        
@@ -89,6 +92,18 @@ completeQuiz(){
       
     }
   })
+}
+nextQuestion(){
+  this.qindex +=1;
+  this.question = this.questions[this.qindex];
+}
+backQuestion(){
+  this.qindex -=1;
+  this.question = this.questions[this.qindex];
+}
+setQuestion(index:any){
+  this.qindex = index;
+  this.question = this.questions[this.qindex];
 }
 
 // confirmTest(){

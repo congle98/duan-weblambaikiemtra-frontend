@@ -45,12 +45,12 @@
     <a 
     *ngIf="!isLoggedIn"
     [routerLink]="['/login']" mat-icon-button class="example-icon favorite-icon mr-20" aria-label="Example icon-button with heart icon">
-      Login
+      Đăng nhập
     </a>
     <a 
     *ngIf="!isLoggedIn"
-    [routerLink]="['/signup']"  mat-icon-button class="example-icon mr-20" aria-label="Example icon-button with share icon">
-      Register
+    [routerLink]="['/signup']"  mat-icon-button class="example-icon ml-20 mr-20" aria-label="Example icon-button with share icon">
+      Đăng ký
     </a> 
     <a 
     *ngIf="isLoggedIn&&user!=null&&user.roles[0].roleName=='ADMIN'"
@@ -71,7 +71,7 @@
      <a 
     *ngIf="isLoggedIn"
     (click)="logout()"  mat-icon-button class="example-icon mr-20 ml-20" aria-label="Example icon-button with share icon">
-      Logout
+      Thoát
     </a>
     </mat-toolbar>
 

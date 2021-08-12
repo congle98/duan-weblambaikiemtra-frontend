@@ -5,7 +5,7 @@
         <mat-card-header>
           <mat-card-subtitle
             ><h1>
-              Adding to <strong>{{ quizTitle }} Quiz</strong>
+              Thêm câu hỏi mới vào bài thi <strong>{{ quizTitle }}</strong>
             </h1></mat-card-subtitle
           >
         </mat-card-header>
@@ -31,7 +31,7 @@
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field class="full-width">
-                  <mat-label>Option 1</mat-label>
+                  <mat-label>Đáp án thứ 1</mat-label>
                   <input
                     [(ngModel)]="question.option1"
                     name="option1"
@@ -44,7 +44,7 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field class="full-width">
-                  <mat-label>Option 2</mat-label>
+                  <mat-label>Đáp án thứ 2</mat-label>
                   <input
                     [(ngModel)]="question.option2"
                     name="option2"
@@ -59,7 +59,7 @@
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field class="full-width">
-                  <mat-label>Option 3</mat-label>
+                  <mat-label>Đáp án thứ 3</mat-label>
                   <input
                     [(ngModel)]="question.option3"
                     name="option3"
@@ -72,7 +72,7 @@
               </div>
               <div class="col-md-6">
                 <mat-form-field class="full-width">
-                  <mat-label>Option 4</mat-label>
+                  <mat-label>Đáp án thứ 4</mat-label>
                   <input
                     [(ngModel)]="question.option4"
                     name="option4"
@@ -85,7 +85,7 @@
               </div>
             </div>
             <mat-form-field class="full-width">
-              <mat-label>Select Answer</mat-label>
+              <mat-label>Đáp án đúng</mat-label>
               <mat-select required [(ngModel)]="question.answer" name="answer">
                 <mat-option
                   [value]="question.option1"
@@ -112,7 +112,7 @@
             
             <div class="container text-center">
               <p *ngIf="myForm.invalid" class="my-validator">Yêu cầu nhập đầy đủ các trường bắt buộc!!</p>
-              <button mat-raised-button color="primary" [disabled]="myForm.invalid">Add Question</button>
+              <button mat-raised-button color="primary" [disabled]="myForm.invalid">Thêm</button>
             </div>
           </form>
         </mat-card-content>

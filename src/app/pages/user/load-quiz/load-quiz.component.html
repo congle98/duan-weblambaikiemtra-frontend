@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row mt-20" *ngIf="quizzes">
     <div class="col-md-4" *ngFor="let quiz of quizzes">
-      <mat-card class="my-card">
+      <mat-card class="my-card mb-20">
         <mat-card-header>
             <div mat-card-avatar class="example-header-image-quiz"></div>
             <mat-card-title>{{quiz.title}}</mat-card-title>
@@ -12,9 +12,9 @@
         </mat-card-content>
         <mat-card-actions>
             <!-- <button mat-button color="primary">View</button> -->
-            <button mat-raised-button color="primary" routerLink="/user-dashboard/instructions/{{quiz.id}}">Start</button>
-            <button mat-button color="accent">Question:{{quiz.numberOfQuestion}}</button>
-            <button mat-button color="accent">Max Marks: {{quiz.maxMarks}}</button>
+            <button mat-raised-button color="primary" routerLink="/user-dashboard/instructions/{{quiz.id}}">Thi</button>
+            <button mat-button color="accent">Số câu hỏi:{{quiz.numberOfQuestion}}</button>
+            <button mat-button color="accent">Tổng điểm: {{quiz.maxMarks}}</button>
         </mat-card-actions>
       </mat-card>
     </div>

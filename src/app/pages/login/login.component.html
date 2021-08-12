@@ -7,7 +7,7 @@
         >
         <form (ngSubmit)="formSubmit()">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>UserName</mat-label>
+            <mat-label>Tên đăng nhập</mat-label>
             <input
               required
               [(ngModel)]="user.username"
@@ -19,7 +19,7 @@
             <mat-hint>Vui lòng nhập đầy đủ thông tin</mat-hint>
           </mat-form-field>
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>PassWord</mat-label>
+            <mat-label>Mật khẩu</mat-label>
             <input
               required
               [(ngModel)]="user.password"

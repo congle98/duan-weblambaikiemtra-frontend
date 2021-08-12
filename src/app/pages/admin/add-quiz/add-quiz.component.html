@@ -1,11 +1,11 @@
 <mat-card class="my-card">
-  <h1>Add new quiz</h1>
+  <h1>Thêm bài thi mới</h1>
   <div class="container">
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <form (ngSubmit)="addQuiz()"  #myForm="ngForm">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Title</mat-label>
+            <mat-label>Tiêu đề</mat-label>
             <input
               name="title"
               [(ngModel)]="quiz.title"
@@ -16,7 +16,7 @@
             />
           </mat-form-field>
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Description</mat-label>
+            <mat-label>Mô tả chi tiết</mat-label>
             <input
               name="description"
               [(ngModel)]="quiz.description"
@@ -30,31 +30,31 @@
           <div class="row">
             <div class="col-md-6">
               <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Max Marks</mat-label>
+                <mat-label>Tổng điểm cao nhất</mat-label>
                 <input
                   name="maxMarks"
                   [(ngModel)]="quiz.maxMarks"
-                  pattern="[0-9]{1,3}"
-                  type="text"
+                
+                  type="number"
                   matInput
                   required
                   placeholder="điểm lớn nhất"
-                  type="text"
+                
                 />
               </mat-form-field>
             </div>
             <div class="col-md-6">
               <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Number of Question</mat-label>
+                <mat-label>Tổng số câu hỏi</mat-label>
                 <input
                   required
                   name="numberOfQuestion"
                   [(ngModel)]="quiz.numberOfQuestion"
-                  type="text"
-                  pattern="[0-9]{1,3}"
+                  type="number"
+                  
                   matInput
                   placeholder="tổng số câu hỏi"
-                  type="text"
+                  
                   
                 />
               </mat-form-field>
@@ -73,7 +73,7 @@
             </div>
             <div class="col-md-6">
               <mat-form-field appearance="fill">
-                <mat-label>Category</mat-label>
+                <mat-label>Thể loại</mat-label>
                 <mat-select   [(ngModel)]="quiz.category" name="category" required>
                   <mat-option
                     *ngFor="let category of categories"
@@ -87,7 +87,7 @@
           </div>
           <div class="container text-center mt-20">
             <p *ngIf="myForm.invalid" class="my-validator">Yêu cầu nhập đầy đủ các trường bắt buộc!!</p>
-            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="submit">Add</button>
+            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="submit">Thêm</button>
           </div>
         </form>
       </div>

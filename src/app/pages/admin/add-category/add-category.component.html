@@ -1,11 +1,11 @@
 <mat-card class="my-card mt-20">
-  <h1>Add new category</h1>
+  <h1>Thêm mới loại bài thi</h1>
   <mat-card-content>
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <form (ngSubmit)="addCategory()" #myForm="ngForm">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Title</mat-label>
+            <mat-label>Tiêu đề</mat-label>
             <input
               name="title"
               [(ngModel)]="category.title"
@@ -16,7 +16,7 @@
             />
           </mat-form-field>
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>Description</mat-label>
+            <mat-label>Mô tả chi tiết</mat-label>
             <input
               name="description"
               [(ngModel)]="category.description"
@@ -29,7 +29,7 @@
           </mat-form-field>
           <div class="container text-center mt-20">
             <p *ngIf="myForm.invalid" class="my-validator">Yêu cầu nhập đầy đủ các trường bắt buộc!!</p>
-            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="submit">Add</button>
+            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="submit">Thêm</button>
           </div>
         </form>
       </div>

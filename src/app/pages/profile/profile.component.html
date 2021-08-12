@@ -1,5 +1,5 @@
 <mat-card class="mt-20 my-card">
-  <h1>Your profile</h1>
+  <h1>Thông tin cá nhân</h1>
   <mat-card-content>
     <div class="container">
       <div class="container text-center">
@@ -19,10 +19,10 @@
               <td>Tên</td>
               <td>{{user.fistname}}</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td>UserID</td>
               <td>{{user.id}}</td>
-            </tr>
+            </tr> -->
             <tr>
               <td>Email</td>
               <td>{{user.email}}</td>
@@ -31,23 +31,23 @@
               <td>Phone</td>
               <td>{{user.phone}}</td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td>Role</td>
               <td>{{user.roles[0].roleName}}</td>
-            </tr>
+            </tr> -->
             <tr>
-                <td>Status</td>
+                <td>Trạng thái</td>
                 <td>{{user.enable?"Đang hoạt động":"Đã khoá"}}</td>
               </tr>
               <tr>
-                <td>Update Avatar</td>
-                <td><button mat-raised-button color="primary" (click)="csvInput.click()">Choose Files</button><input (change)="setAvatar($event)" #csvInput hidden type="file"></td>
+                <td>Cập nhật Avatar</td>
+                <td><button mat-raised-button color="primary" (click)="csvInput.click()">Chọn Avatar</button><input (change)="setAvatar($event)" #csvInput hidden type="file"></td>
               </tr>
               </tbody>
            
           </table>
           <mat-card-actions class="text-center">
-            <button mat-raised-button (click)="updateAvatar()"  color="accent" >Update Avatar</button>
+            <button mat-raised-button (click)="updateAvatar()"  color="accent" >Cập nhật Avatar</button>
             <!-- <button mat-raised-button color="accent" >SHARE</button> -->
           </mat-card-actions>
         </div>

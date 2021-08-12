@@ -3,11 +3,11 @@
     <div class="col-md-6 mt-20 offset-md-3">
       <mat-card class="example-card my-card">
         <mat-card-title>
-          <h1 class="text-center">Register here!</h1></mat-card-title
+          <h1 class="text-center">Đăng ký !</h1></mat-card-title
         >
         <form (ngSubmit)="formSubmit()" #myForm="ngForm">
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>UserName</mat-label>
+            <mat-label>Tên tài khoản</mat-label>
             <input
               required
               [(ngModel)]="user.username"
@@ -30,7 +30,7 @@
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width" appearance="outline">
-            <mat-label>PassWord</mat-label>
+            <mat-label>Mật khẩu</mat-label>
 
             <input
               required

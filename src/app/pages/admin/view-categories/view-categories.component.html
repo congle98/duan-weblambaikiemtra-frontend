@@ -1,6 +1,6 @@
 <mat-card class="my-card mt-20">
     <mat-list>
-        <div mat-subheader>All Categories</div>
+        <div mat-subheader>Tất cả các thể loại bài thi</div>
         <mat-list-item *ngFor="let category of categories">
             <mat-icon mat-list-icon>category</mat-icon>
                 <div mat-line>{{category.title}}</div>
@@ -9,6 +9,6 @@
         </mat-list-item>
     </mat-list>
     <div class="container text-center mt-20" >
-        <button mat-raised-button color="primary" routerLink="/admin/add-category">Add new category</button>
+        <button mat-raised-button color="primary" routerLink="/admin/add-category">Thêm loại mới</button>
     </div>
 </mat-card>
